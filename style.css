@@ -1,4 +1,6 @@
-
+.logo {
+    display: flex;
+}
 
 .logo img {
     width: 164px;
@@ -19,13 +21,16 @@ nav {
 
 .right ul li {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .first {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 70px 70px 0px 70px;
+    justify-content: center;
+    /* margin: 70px 70px 0px 70px; */
     gap: 24px;
 
 }
@@ -63,6 +68,7 @@ nav {
 
 }
 
+
 .small {
     font-size: medium;
     margin-left: 6px;
@@ -72,8 +78,9 @@ nav {
 .downlode {
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 40px;
+    max-width: 50vw;
+    margin: auto;
 
 }
 
@@ -98,9 +105,9 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 80px;
+    width: 80vw;
+    margin: auto;
+    
 }
 
 .item-5 {
@@ -121,6 +128,15 @@ nav {
 .item-4 {
     padding: 5px;
     font-size: 0.6rem;
+}
+
+@media screen and (max-width: 1145px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
 }
 
 /* .third {
