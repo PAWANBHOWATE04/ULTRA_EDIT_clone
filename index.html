@@ -14,7 +14,10 @@
             <div class="logo">
                 <img src="assets/image1.png" alt="logo">
             </div>
-            <div class="right">
+               <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+            <div class="right" id="nav-links">
                 <ul>
                     <li>Product</li>
                     <li>Prising</li>
@@ -125,7 +128,15 @@
             </div>
         </section>
     </footer> -->
-    
+     <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
 </body>
+   
 
 </html>

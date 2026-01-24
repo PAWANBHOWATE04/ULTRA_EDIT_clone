@@ -139,6 +139,44 @@ nav {
 
 }
 
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .right {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+    }
+
+    .right ul {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .right.active {
+        display: block;
+    }
+}
+
 /* .third {
     background-color: #f2f0ec;
     width: 100%;
