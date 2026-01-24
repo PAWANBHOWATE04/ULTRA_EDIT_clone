@@ -157,8 +157,3 @@ This project is provided under the MIT License — see the [LICENSE](LICENSE) fi
 - Consider integrating [CodeMirror](https://codemirror.net/) or [Monaco Editor](https://microsoft.github.io/monaco-editor/) to add editor functionality
 
 ---
-
-If you'd like, I can:
-- auto-generate and add the README to the repository,
-- update the Table of Contents to match the actual file structure,
-- or create a small starter integration that adds CodeMirror for editing capabilities. Tell me which action you'd like next.
