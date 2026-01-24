@@ -10,8 +10,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -19,21 +18,19 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Prepare public folder
-        run: |
-          rm -rf public
-          mkdir -p public
-          cp -v index.html public/ || true
-          cp -v style.css public/ || true
-          # Copying the assets folder to the public deployment directory
-          if [ -d "assets" ]; then cp -r assets public/; fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,7 +38,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          # This "." means "upload everything in this folder" 
+          # including the assets folder, index.html, and style.css
+          path: '.'
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
