@@ -1,7 +1,7 @@
 # ULTRA_EDIT_clone
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/demo-GitHub%20Pages-lightgrey.svg)]()
+[![Pages](https://img.shields.io/badge/demo-GitHub%20Pages-lightgrey.svg)](https://pawanbhowate04.github.io/ULTRA_EDIT_clone/)
 
 A lightweight HTML/CSS clone of the UltraEdit editor user interface — a static UI prototype that reproduces the look-and-feel (layout, menus, panels, and styling) of a traditional text editor using only HTML and CSS.
 
