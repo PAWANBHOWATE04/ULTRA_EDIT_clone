@@ -83,12 +83,17 @@ This README reflects the repository's actual structure (verified):
 
 ```
 / (root)
-├─ index.html        # Main demo page / UI prototype
-├─ style.css         # Main stylesheet (note: not under css/ folder)
-├─ docs/             # Documentation / screenshots (currently present)
-├─ assets/           # Icons, images, fonts (currently present)
-├─ LICENSE           # MIT License file
-└─ README.md
+├─ .github/             # GitHub specific configurations
+│  ├─ ISSUE_TEMPLATE/   # Pre-defined bug and feature forms
+│  └─ workflows/        # GitHub Actions (Automated Deployment)
+├─ assets/              # Icons and project images
+├─ docs/                # Documentation and screenshots
+├─ CODE_OF_CONDUCT.md   # Community standards
+├─ CONTRIBUTING.md      # Instructions for contributors
+├─ index.html           # Main UI prototype
+├─ style.css            # Main stylesheet
+├─ LICENSE              # MIT License
+└─ README.md            # Project overview
 ```
 
 ## Files of Interest
