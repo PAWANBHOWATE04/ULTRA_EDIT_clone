@@ -1,0 +1,54 @@
+# Deploy static HTML/CSS site to GitHub Pages automatically on push to main.
+# Place this file at: .github/workflows/deploy-pages.yml
+#
+# Notes:
+# - This uses the official Pages actions (configure-pages, upload-pages-artifact, deploy-pages).
+# - It copies site files into a `public` folder and deploys that folder.
+# - Adjust the list of files/folders copied into `public` if your repo layout differs.
+#
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare public folder
+        # Adjust these paths if your site files live elsewhere.
+        run: |
+          rm -rf public
+          mkdir -p public
+          # copy root files
+          cp -v index.html public/ || true
+          cp -v style.css public/ || true
+          # copy docs and assets directories if present
+          if [ -d "docs" ]; then cp -r docs public/docs; fi
+          if [ -d "assets" ]; then cp -r assets public/assets; fi
+          # if you want everything (use with caution to avoid copying .git)
+          # shopt -s extglob
+          # cp -r !( .git | .github ) public || true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
